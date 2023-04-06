@@ -16,6 +16,7 @@ function setup() {
 
 
 function draw() {
+  console.log("PUSHED");
   if(scrolling){
     if(y%100!=0){
       if(deltaY>0){
