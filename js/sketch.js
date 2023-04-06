@@ -4,7 +4,14 @@ let x=0,y=0;
 let scrolling=false;
 let deltaY=0;
 
-let webState=0;
+let board = [];
+let boardNext = [];
+let xSize=0;
+let ySize=0;
+
+let webState=-1;
+
+//-1 landing page
 //0 home
 //1 tutorials
 //2 showcase
@@ -16,7 +23,43 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  console.log(width+" "+height);
+  console.log(width,height);
+  xSize=(width-(width%20))/20-5;
+  ySize=(height-(height%20))/20-5;
+  console.log(xSize,ySize);
+
+  for(let i=0;i<xSize;i++){
+    boardNext[i]=[];
+  }
+  for(let i=0;i<xSize;i++){
+    for(let j=0;j<ySize;j++){
+      boardNext[i][j]=0;
+    }
+  }
+
+
+
+  for(let i=0;i<xSize;i++){
+    board[i]=[];
+  }
+  for(let i=0;i<xSize;i++){
+    for(let j=0;j<ySize;j++){
+      board[i][j]=0;
+    }
+  }
+
+  
+  
+  for(let i=1;i<xSize-1;i++){
+    for(let j=1;j<ySize-1;j++){
+      
+      if(floor(random(0,10))>1){
+        board[i][j]=0;
+      }else{
+        board[i][j]=1;
+      }
+    }
+  }
 }
 
 function draw() {
@@ -36,18 +79,24 @@ function draw() {
     scrolling=false;
   }
   push();
-  translate(x,y);
-  sideBar();
+  //translate(x,y);
+  
   if(webState==0){
+    sideBar();
     homeDisplay();
   }else if(webState==1){
+    sideBar();
     tutorialsDisplay();
   }else if(webState==2){
+    sideBar();
     showcaseDisplay();
   }else if(webState==3){
+    sideBar();
     aboutMeDisplay(); 
+  }else if(webState==-1){
+    landingUpdate();
+    landingDisplay();
   }
-
   pop();
 }
 
@@ -80,7 +129,10 @@ function mousePressed(){
   if(mouseDetect(80,500,250,290)){
     webState=3;
   }
+  
+  board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]=1;
 }
+
 
 function mouseDetect(x1,x2,y1,y2){
   return(mouseX>x1 && mouseX<x2 && mouseY>y1+y && mouseY<y2+y);
