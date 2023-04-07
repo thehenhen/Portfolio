@@ -1,3 +1,5 @@
+let cnv;
+
 let myFont;
 let yMax=0;
 let x=0,y=0;
@@ -8,6 +10,7 @@ let board = [];
 let boardNext = [];
 let xSize=0;
 let ySize=0;
+let moving=true;
 
 let webState=-1;
 
@@ -22,44 +25,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  console.log(width,height);
-  xSize=(width-(width%20))/20-5;
-  ySize=(height-(height%20))/20-5;
-  console.log(xSize,ySize);
-
-  for(let i=0;i<xSize;i++){
-    boardNext[i]=[];
-  }
-  for(let i=0;i<xSize;i++){
-    for(let j=0;j<ySize;j++){
-      boardNext[i][j]=0;
-    }
-  }
-
-
-
-  for(let i=0;i<xSize;i++){
-    board[i]=[];
-  }
-  for(let i=0;i<xSize;i++){
-    for(let j=0;j<ySize;j++){
-      board[i][j]=0;
-    }
-  }
-
-  
-  
-  for(let i=1;i<xSize-1;i++){
-    for(let j=1;j<ySize-1;j++){
-      
-      if(floor(random(0,10))>1){
-        board[i][j]=0;
-      }else{
-        board[i][j]=1;
-      }
-    }
-  }
+  cnv = createCanvas(windowWidth, windowHeight);
+  landingIntialize();
 }
 
 function draw() {
@@ -94,8 +61,12 @@ function draw() {
     sideBar();
     aboutMeDisplay(); 
   }else if(webState==-1){
-    landingUpdate();
+    if(moving){
+      landingUpdate();
+    }
     landingDisplay();
+    //filter(BLUR);
+    console.log(get(width/2,400));
   }
   pop();
 }
@@ -113,26 +84,41 @@ function mouseWheel(event){
 
 function windowResized(){
   resizeCanvas(windowWidth,windowHeight);
+  landingIntialize();
 }
 
 function mousePressed(){
-  if(mouseDetect(80,500,130,170)){
-    console.log("detect");
-    webState=0;
+  if(webState!=-1){
+    if(mouseDetect(80,500,130,170)){
+      webState=0;
+    }
+    if(mouseDetect(80,500,170,210)){
+      webState=1;
+    }
+    if(mouseDetect(80,500,210,250)){
+      webState=2;
+    }
+    if(mouseDetect(80,500,250,290)){
+      webState=3;
+    }
+  }else{
+    if(mouseDetect(width/2-100,width/2+100,400-40,400+40)){
+      webState=0;
+    }
+    board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]*=-1;
+    board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]+=1;
   }
-  if(mouseDetect(80,500,170,210)){
-    webState=1;
-  }
-  if(mouseDetect(80,500,210,250)){
-    webState=2;
-  }
-  if(mouseDetect(80,500,250,290)){
-    webState=3;
-  }
-  
-  board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]=1;
 }
 
+function mouseDragged(){
+  mousePressed();
+}
+
+function keyPressed(){
+  if(keyCode==32){
+    moving=!moving;
+  }
+}
 
 function mouseDetect(x1,x2,y1,y2){
   return(mouseX>x1 && mouseX<x2 && mouseY>y1+y && mouseY<y2+y);
