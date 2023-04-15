@@ -49,24 +49,27 @@ function draw() {
   //translate(x,y);
   
   if(webState==0){
+    frameRate(60);
     sideBar();
     homeDisplay();
   }else if(webState==1){
+    frameRate(60);
     sideBar();
     tutorialsDisplay();
   }else if(webState==2){
+    frameRate(60);
     sideBar();
     showcaseDisplay();
   }else if(webState==3){
+    frameRate(60);
     sideBar();
     aboutMeDisplay(); 
   }else if(webState==-1){
+    frameRate(10);
     if(moving){
       landingUpdate();
     }
     landingDisplay();
-    //filter(BLUR);
-    console.log(get(width/2,400));
   }
   pop();
 }
