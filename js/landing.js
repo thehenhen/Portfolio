@@ -27,6 +27,7 @@ function landingDisplay(){
     rect(width/2,400,200,80);
     fill(0);
     text("Enter",width/2,395);
+    noStroke();
 }
 
 function landingUpdate(){

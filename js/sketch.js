@@ -2,6 +2,7 @@ let cnv;
 
 let myFont;
 let yMax=0;
+let yMin=0;
 let x=0,y=0;
 let scrolling=false;
 let deltaY=0;
@@ -14,7 +15,7 @@ let moving=true;
 
 let pfp;
 
-let webState=0;
+let webState=-1;
 
 //-1 landing page
 //0 home
@@ -45,6 +46,10 @@ function draw() {
   }
   if(y>yMax){
     y=yMax;
+    scrolling=false;
+  }
+  if(y<yMin){
+    y=yMin;
     scrolling=false;
   }
   push();
