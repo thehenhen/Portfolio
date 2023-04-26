@@ -12,16 +12,18 @@ let xSize=0;
 let ySize=0;
 let moving=true;
 
-let webState=-1;
+let pfp;
+
+let webState=0;
 
 //-1 landing page
 //0 home
 //1 tutorials
 //2 showcase
-//3 about me
 
 function preload(){
   myFont = loadFont('assets/SpaceGrotesk-Regular.ttf');
+  pfp=loadImage('assets/profilePicture.jpg');
 }
 
 function setup() {
@@ -46,24 +48,26 @@ function draw() {
     scrolling=false;
   }
   push();
-  //translate(x,y);
+  translate(x,y);
   
   if(webState==0){
     frameRate(60);
-    sideBar();
+    
     homeDisplay();
+    pop();
+    sideBar();
   }else if(webState==1){
     frameRate(60);
-    sideBar();
+    
     tutorialsDisplay();
+    pop();
+    sideBar();
   }else if(webState==2){
     frameRate(60);
-    sideBar();
+    
     showcaseDisplay();
-  }else if(webState==3){
-    frameRate(60);
+    pop();
     sideBar();
-    aboutMeDisplay(); 
   }else if(webState==-1){
     frameRate(10);
     if(moving){
@@ -71,7 +75,6 @@ function draw() {
     }
     landingDisplay();
   }
-  pop();
 }
 
 function mouseWheel(event){
@@ -92,17 +95,17 @@ function windowResized(){
 
 function mousePressed(){
   if(webState!=-1){
-    if(mouseDetect(80,500,130,170)){
+    if(mouseDetect(80,400,130-y,170-y)){
       webState=0;
+      y=0;
     }
-    if(mouseDetect(80,500,170,210)){
+    if(mouseDetect(80,400,170-y,210-y)){
       webState=1;
+      y=0;
     }
-    if(mouseDetect(80,500,210,250)){
+    if(mouseDetect(80,400,210-y,250-y)){
       webState=2;
-    }
-    if(mouseDetect(80,500,250,290)){
-      webState=3;
+      y=0;
     }
   }else{
     if(mouseDetect(width/2-100,width/2+100,400-40,400+40)){
@@ -128,35 +131,43 @@ function mouseDetect(x1,x2,y1,y2){
 }
 
 function sideBar(){
-  background(255);
+  noFill();
+  imageMode(CENTER);
+  image(pfp,100,85,50,50);
+  //rect(135,65,210,35);
+
+
   textAlign(LEFT,CENTER);
   textSize(30);
   textFont(myFont);
   fill(0);
   text("HENRY ZHANG",140,80);
+
+  //fill(200);
+  //noStroke();
+  noFill();
+  rectMode(CORNERS);
+  for(let i=0;i<3;i++){
+    //rect(75,135+i*40,400,165+i*40);
+  }
+
   textSize(16);
 
   fill(100);
-  if(mouseDetect(80,500,130,170)){
+  if(mouseDetect(80,400,130-y,170-y)){
     fill('#75B8C8');
   }
   text("Home",80,150);
 
   fill(100);
-  if(mouseDetect(80,500,170,210)){
+  if(mouseDetect(80,400,170-y,210-y)){
     fill('#75B8C8');
   }
   text("Tutorials",80,190);
 
   fill(100);
-  if(mouseDetect(80,500,210,250)){
+  if(mouseDetect(80,400,210-y,250-y)){
     fill('#75B8C8');
   }
   text("Showcase",80,230);
-
-  fill(100);
-  if(mouseDetect(80,500,250,290)){
-    fill('#75B8C8');
-  }
-  text("About Me",80,270);
 }
