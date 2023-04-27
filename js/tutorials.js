@@ -114,6 +114,7 @@ function tutorialsDisplay(){
         rect(560,530,270,30);
         rect(560,660,130,30);
         rect(560,870,450,30);
+        rect(560,990,340,30)
         textFont(monoFont);
         fill(100);
         text("      int[] arr = new int[5];",500,460);
@@ -136,6 +137,12 @@ function tutorialsDisplay(){
         text("      for(int i=0;i<arr.length;i++) arr[i]*=2;",500,880);
         textFont(myFont);
         text("                    -  In each iteration, the index increases, looping through each\n                       element of the array.",500,920);
+        text(" - Alternatively, for-each loops can be used:",500,960);
+        textFont(monoFont);
+        text("      for(int value : arr) value*=2;",500,1000);
+        textFont(myFont);
+        text("                    -  In each iteration, value is assigned the value of each element in the array",500,1030);
+        
 
     }else if(tutorialState==3){
         textAlign(LEFT,CENTER);
