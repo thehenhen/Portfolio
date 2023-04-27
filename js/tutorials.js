@@ -99,6 +99,44 @@ function tutorialsDisplay(){
         textAlign(LEFT,CENTER);
         textSize(25);
         text("Arrays",500,200);
+        textSize(20);
+        text("Basics",500,280);
+        textSize(18);
+
+        text("  -  The Array class is a class that stores primitive data types.",500,320);
+        text("       -  Once they are created, they have a set size that cannnot be modified.", 500,350);
+        text("  -  Arrays are useful to store multiple variables of the same type rather\n\t\t\tthan several individual variables.",500,390);
+        text("  -  There are 2 main ways to declare and initialize an array: ",500,430);
+        noStroke();
+        rectMode(CORNER);
+        fill('#D3EDF3');
+        rect(560,450,260,30);
+        rect(560,530,270,30);
+        rect(560,660,130,30);
+        rect(560,870,450,30);
+        textFont(monoFont);
+        fill(100);
+        text("      int[] arr = new int[5];",500,460);
+        text("      int[] arr = {1,2,3,4,5};",500,540);
+        textFont(myFont);
+        text("                    -  This creates an array called \"arr\" of size 5, storing type int,\n                       and all elements assigned the default value of 0.",500,500);
+        text("                    -  This creates an array called \"arr\" of size 5, storing type int,\n                       with values {1,2,3,4,5} assigned to it.",500,590);
+        text("  -  To access or modify elements with an array, use this syntax:",500,630);
+        textFont(monoFont);
+        text("      arr[1] = 3;",500,670);
+        textFont(myFont);
+        text("                    -  This sets the element at index 1 as 3.",500,710);
+        text("                    -  Arrays are zero-indexed, meaning that the first element has\n                       index 0, second element has index 1, etc.",500,750);
+
+        textSize(20);
+        text("Trasversing Arrays: ",500,800);
+        textSize(18);
+        text("  -  If you need to modify an entire array, for loops can be used to\n     iterate through the array:",500,840);
+        textFont(monoFont);
+        text("      for(int i=0;i<arr.length;i++) arr[i]*=2;",500,880);
+        textFont(myFont);
+        text("                    -  In each iteration, the index increases, looping through each\n                       element of the array.",500,920);
+
     }else if(tutorialState==3){
         textAlign(LEFT,CENTER);
         textSize(25);

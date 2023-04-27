@@ -56,8 +56,9 @@ function mouseClicked(){
     }
   }
   
+
   function mouseDragged(){
-    mousePressed();
+    mouseClicked();
   }
   
   function keyPressed(){
@@ -77,5 +78,13 @@ function windowResized(){
     hs1 = new HScrollbar(450, height-8, width-466 , 16, 16);
     vs1 = new VScrollbar(width-8,0,16,height-16,16);
   }
+
+
+function mouseWheel(event){
+  //y-=event.delta*2.3;
+  vs1.newspos+=event.delta;
+  vs1.newspos=max(vs1.sposMin,vs1.newspos);
+  vs1.newspos=min(vs1.sposMax,vs1.newspos);
+}
   
   
