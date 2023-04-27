@@ -5,7 +5,6 @@ let monoFont;
 let yMax=0;
 let yMin=0;
 let x=0,y=0;
-let scrolling=false;
 let deltaY=0;
 
 let board = [];
@@ -18,6 +17,18 @@ let pfp;
 let person;
 let teacher;
 let mainOOP;
+
+let hs1;
+let vs1;
+
+let tutorialsMenu=false;
+let tutorialState=1;
+
+//1 OOP
+//2 Arrays
+//3 ArrayLists
+//4 Searching and Sorting
+//5 Recursion
 
 let webState=-1;
 
@@ -38,31 +49,12 @@ function preload(){
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
   landingIntialize();
+  scrollbarInitialize();
 }
 
 function draw() {
-  if(scrolling){
-    if(y%100!=0){
-      if(deltaY>0){
-        y-=20;
-      }else{
-        y+=20;
-      }
-    }else{
-      scrolling=false;
-    }
-  }
-  if(y>yMax){
-    y=yMax;
-    scrolling=false;
-  }
-  if(y<yMin){
-    y=yMin;
-    scrolling=false;
-  }
-  console.log(y);
   push();
-  translate(x,y);
+  translate(-(hs1.spos-hs1.sposMin),y-(vs1.spos-vs1.sposMin)*2.3);
   
   if(webState==0){
     frameRate(60);
@@ -72,7 +64,7 @@ function draw() {
     sideBar();
   }else if(webState==1){
     frameRate(60);
-    yMin=-1500;
+    yMin=-1700;
     tutorialsDisplay();
     pop();
     sideBar();
@@ -91,61 +83,11 @@ function draw() {
   }
 }
 
-function mouseWheel(event){
-  deltaY=event.deltaY;
-  if(deltaY>0){
-    y-=20;
-    scrolling=true;
-  }else{
-    y+=20;
-    scrolling=true;
-  }
-}
-
-function windowResized(){
-  resizeCanvas(windowWidth,windowHeight);
-  landingIntialize();
-}
-
-function mousePressed(){
-  if(webState!=-1){
-    if(mouseDetect(80,400,130-y,170-y)){
-      webState=0;
-      y=0;
-    }
-    if(mouseDetect(80,400,170-y,210-y)){
-      webState=1;
-      y=0;
-      
-    }
-    if(mouseDetect(80,400,210-y,250-y)){
-      webState=2;
-      y=0;
-    }
-  }else{
-    if(mouseDetect(width/2-100,width/2+100,400-40,400+40)){
-      webState=0;
-    }
-    board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]*=-1;
-    board[(mouseX-(mouseX%20))/20][(mouseY-(mouseY%20))/20]+=1;
-  }
-}
-
-function mouseDragged(){
-  mousePressed();
-}
-
-function keyPressed(){
-  if(keyCode==32){
-    moving=!moving;
-  }
-}
-
-function mouseDetect(x1,x2,y1,y2){
-  return(mouseX>x1 && mouseX<x2 && mouseY>y1+y && mouseY<y2+y);
-}
 
 function sideBar(){
+  fill(200);
+  rectMode(CORNER);
+  rect(0,0,450,height);
   noFill();
   imageMode(CENTER);
   image(pfp,100,85,50,50);
@@ -180,9 +122,53 @@ function sideBar(){
   }
   text("Tutorials",80,190);
 
-  fill(100);
-  if(mouseDetect(80,400,210-y,250-y)){
-    fill('#75B8C8');
+  if(!tutorialsMenu){
+    fill(100);
+    if(mouseDetect(80,400,210-y,250-y)){
+      fill('#75B8C8');
+    }
+    text("Showcase",80,230);
+  }else{
+    fill(100);
+    if(mouseDetect(80,400,210-y,250-y)){
+      fill('#75B8C8');
+    }
+    text("\tOOP",80,230);
+
+    fill(100);
+    if(mouseDetect(80,400,250-y,290-y)){
+      fill('#75B8C8');
+    }
+    text("\tArrays",80,270);
+
+    fill(100);
+    if(mouseDetect(80,400,290-y,340-y)){
+      fill('#75B8C8');
+    }
+    text("\tArrayLists",80,310);
+
+    fill(100);
+    if(mouseDetect(80,400,340-y,380-y)){
+      fill('#75B8C8');
+    }
+    text("\tSearching and Sorting",80,350);
+
+    fill(100);
+    if(mouseDetect(80,400,380-y,420-y)){
+      fill('#75B8C8');
+    }
+    text("\tRecursion",80,390);
+
+    fill(100);
+    if(mouseDetect(80,400,420-y,460-y)){
+      fill('#75B8C8');
+    }
+    text("Showcase",80,430);
   }
-  text("Showcase",80,230);
+  
+  hs1.update();
+  hs1.display();
+  vs1.update();
+  vs1.display();
 }
+
