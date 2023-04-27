@@ -130,7 +130,7 @@ function tutorialsDisplay(){
         text("                    -  Arrays are zero-indexed, meaning that the first element has\n                       index 0, second element has index 1, etc.",500,750);
 
         textSize(20);
-        text("Trasversing Arrays: ",500,800);
+        text("Traversing Arrays: ",500,800);
         textSize(18);
         text("  -  If you need to modify an entire array, for loops can be used to\n     iterate through the array:",500,840);
         textFont(monoFont);
@@ -142,12 +142,36 @@ function tutorialsDisplay(){
         text("      for(int value : arr) value*=2;",500,1000);
         textFont(myFont);
         text("                    -  In each iteration, value is assigned the value of each element in the array",500,1030);
-        
+        textSize(20);
+        text("Example of Usage: ",500,1070);
+        imageMode(CORNER);
+        image(minimum,500,1100);
+        image(reverse,500,1450);
 
     }else if(tutorialState==3){
         textAlign(LEFT,CENTER);
         textSize(25);
         text("ArrayLists",500,200);
+        textSize(20);
+        text("Basics",500,280);
+        textSize(18);
+
+        text("  -  ArrayList: a data structure that stores a list of objects.",500,320);
+        text("       -  Its size is dynamic - it can be changed.",500,350)
+        text("  -  ArrayLists can only store objects, not primitive data types.",500,380);
+        text("       -  No ints, chars, doubles, etc.",500,410);
+        text("       -  However, wrapper classes such as Integer, etc. that store their respective\n\t\t\tdata types, can be stored in ArrayList.",500,450);
+        text("  -  To declare and initialize an ArrayList:",500,490);
+
+        noStroke();
+        rectMode(CORNER);
+        fill('#D3EDF3');
+        rect(560,505,430,30);
+        fill(100);
+        textFont(monoFont);
+        text("\t\t\tArrayList<E> list = new ArrayList<>();",500,515);
+        textFont(myFont);
+        text("                    -  E is the element type",500,550);
     }else if(tutorialState==4){
         textAlign(LEFT,CENTER);
         textSize(25);

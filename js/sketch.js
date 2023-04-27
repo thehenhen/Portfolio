@@ -17,6 +17,8 @@ let pfp;
 let person;
 let teacher;
 let mainOOP;
+let minimum;
+let reverse;
 
 let hs1;
 let vs1;
@@ -44,6 +46,8 @@ function preload(){
   person=loadImage('assets/person.png');
   teacher=loadImage('assets/teacher.png');
   mainOOP=loadImage('assets/mainOOP.png');
+  minimum=loadImage('assets/minimum.png');
+  reverse=loadImage('assets/reverse.png');
 }
 
 function setup() {
