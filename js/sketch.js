@@ -16,7 +16,7 @@ let moving=true;
 
 let pfp;
 
-let webState=1;
+let webState=-1;
 
 //-1 landing page
 //0 home
