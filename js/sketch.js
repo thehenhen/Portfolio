@@ -15,6 +15,9 @@ let ySize=0;
 let moving=true;
 
 let pfp;
+let person;
+let teacher;
+let mainOOP;
 
 let webState=-1;
 
@@ -27,6 +30,9 @@ function preload(){
   myFont = loadFont('assets/SpaceGrotesk-Regular.ttf');
   monoFont = loadFont('assets/SpaceMono-Regular.ttf');
   pfp=loadImage('assets/profilePicture.jpg');
+  person=loadImage('assets/person.png');
+  teacher=loadImage('assets/teacher.png');
+  mainOOP=loadImage('assets/mainOOP.png');
 }
 
 function setup() {
@@ -38,9 +44,9 @@ function draw() {
   if(scrolling){
     if(y%100!=0){
       if(deltaY>0){
-        y-=10;
+        y-=20;
       }else{
-        y+=10;
+        y+=20;
       }
     }else{
       scrolling=false;
@@ -66,7 +72,7 @@ function draw() {
     sideBar();
   }else if(webState==1){
     frameRate(60);
-    yMin=-300;
+    yMin=-1500;
     tutorialsDisplay();
     pop();
     sideBar();
@@ -88,10 +94,10 @@ function draw() {
 function mouseWheel(event){
   deltaY=event.deltaY;
   if(deltaY>0){
-    y-=10;
+    y-=20;
     scrolling=true;
   }else{
-    y+=10;
+    y+=20;
     scrolling=true;
   }
 }

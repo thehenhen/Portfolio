@@ -56,9 +56,42 @@ function tutorialsDisplay(){
     fill('#D3EDF3');
     rect(550,1115,280,30);
     fill(100);
-    
     textFont(monoFont);
     text("     ArrayList<Person> people;",500,1125);
     textFont(myFont);
     text("       -  In this ArrayList, we can add both Person and Teacher objects, because any Teacher object is-a Person object.",500,1160);
+
+    textSize(20);
+    text("Example of Usage: ",500,1200);
+    textSize(18);
+    /*
+    textFont(monoFont);
+    text("public class Person{",500,1260);
+    text("\tprivate String name;",500,1290);
+    text("\tprivate boolean employed;",500,1320);
+    text("\tprivate String job;",500,1350);
+    text("\tpublic Person(){",500,1380);
+    text("\t\tname=\"John Doe\";",500,1410);
+    text("\t\temployed=false;",500,1440);
+    text("\t\tjob=\"none\";",500,1470);
+    text("\t}",500,1500);
+    
+
+    text("\tpublic Person(String n,boolean e,String j){",500,1530);
+    text("\t\tname=n;",500,1560);
+    text("\t\temployed=e;",500,1590);
+    text("\t\tjob=j;",500,1620);
+    text("\t}",500,1650);
+    text("\tpublic void introduceSelf(){",500,1710);
+    text("\t\tif(employed){",500,1740);
+    text("\t\t\tSystem.out.println(\"Hello, my name is \"+name+\" and I am a \"+job+\".\");",500,1770);
+    text("\t\t} else {",500,1800)
+    text("\t\t\tSystem.out.println(\"Hello, my name is \"+name+\" and I am unemployed.\");",500,1830);
+    text("\t}",500,1860);
+    text("\tpublic String getName(){\n\t\treturn name;\n\t}\n}",500,1920);
+    textFont(myFont);*/
+    imageMode(CORNER);
+    image(person,500,1260);
+    image(teacher,500,1790);
+    image(mainOOP,500,2090);
 } 
