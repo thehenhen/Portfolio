@@ -1,6 +1,7 @@
 let cnv;
 
 let myFont;
+let monoFont;
 let yMax=0;
 let yMin=0;
 let x=0,y=0;
@@ -15,7 +16,7 @@ let moving=true;
 
 let pfp;
 
-let webState=-1;
+let webState=1;
 
 //-1 landing page
 //0 home
@@ -24,6 +25,7 @@ let webState=-1;
 
 function preload(){
   myFont = loadFont('assets/SpaceGrotesk-Regular.ttf');
+  monoFont = loadFont('assets/SpaceMono-Regular.ttf');
   pfp=loadImage('assets/profilePicture.jpg');
 }
 
@@ -52,24 +54,25 @@ function draw() {
     y=yMin;
     scrolling=false;
   }
+  console.log(y);
   push();
   translate(x,y);
   
   if(webState==0){
     frameRate(60);
-    
+    yMin=0;
     homeDisplay();
     pop();
     sideBar();
   }else if(webState==1){
     frameRate(60);
-    
+    yMin=-300;
     tutorialsDisplay();
     pop();
     sideBar();
   }else if(webState==2){
     frameRate(60);
-    
+    yMin=0;
     showcaseDisplay();
     pop();
     sideBar();
@@ -107,6 +110,7 @@ function mousePressed(){
     if(mouseDetect(80,400,170-y,210-y)){
       webState=1;
       y=0;
+      
     }
     if(mouseDetect(80,400,210-y,250-y)){
       webState=2;
