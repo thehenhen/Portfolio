@@ -47,6 +47,13 @@ let webState=-1;
 //2 showcase
 
 function preload(){
+  
+}
+
+function setup() {
+  cnv = createCanvas(windowWidth, windowHeight); 
+  landingIntialize();
+  scrollbarInitialize();
   myFont = loadFont("assets/SpaceGrotesk-Regular.ttf");
   monoFont = loadFont("assets/SpaceMono-Regular.ttf");
   pfp=loadImage("assets/profilePicture.jpg");
@@ -62,12 +69,6 @@ function preload(){
   bSort=loadImage("assets/bubbleSort.png");
   iSort=loadImage("assets/insertionSort.png");
   mSort=loadImage("assets/mergeSort.png");
-}
-
-function setup() {
-  cnv = createCanvas(windowWidth, windowHeight); 
-  landingIntialize();
-  scrollbarInitialize();
 }
 
 function draw() {
