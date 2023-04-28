@@ -19,6 +19,13 @@ let teacher;
 let mainOOP;
 let minimum;
 let reverse;
+let arrL1;
+let arrL2;
+let linearSearch;
+let binarySearch;
+let bSort;
+let iSort;
+let mSort;
 
 let hs1;
 let vs1;
@@ -48,6 +55,13 @@ function preload(){
   mainOOP=loadImage('assets/mainOOP.png');
   minimum=loadImage('assets/minimum.png');
   reverse=loadImage('assets/reverse.png');
+  arrL1=loadImage('assets/arrayList1.png');
+  arrL2=loadImage('assets/arrayList2.png');
+  linearSearch=loadImage('assets/linearSearch.png');
+  binarySearch=loadImage('assets/binarySearch.png');
+  bSort=loadImage('assets/bubbleSort.png');
+  iSort=loadImage('assets/insertionSort.png');
+  mSort=loadImage('assets/mergeSort.png');
 }
 
 function setup() {

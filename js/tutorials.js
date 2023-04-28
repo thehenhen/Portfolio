@@ -153,7 +153,7 @@ function tutorialsDisplay(){
         textSize(25);
         text("ArrayLists",500,200);
         textSize(20);
-        text("Basics",500,280);
+        text("Basics:",500,280);
         textSize(18);
 
         text("  -  ArrayList: a data structure that stores a list of objects.",500,320);
@@ -162,22 +162,71 @@ function tutorialsDisplay(){
         text("       -  No ints, chars, doubles, etc.",500,410);
         text("       -  However, wrapper classes such as Integer, etc. that store their respective\n\t\t\tdata types, can be stored in ArrayList.",500,450);
         text("  -  To declare and initialize an ArrayList:",500,490);
-
+        
         noStroke();
         rectMode(CORNER);
         fill('#D3EDF3');
         rect(560,505,430,30);
+        rect(735,570,490,30);
+        rect(560,910,700,30);
+        rect(560,950,450,30);
         fill(100);
         textFont(monoFont);
         text("\t\t\tArrayList<E> list = new ArrayList<>();",500,515);
+        text("ArrayList<Integer> list = new ArrayList<>();",740,580);
         textFont(myFont);
         text("                    -  E is the element type",500,550);
+        text("                    -  For example: ",500,580);
+        textSize(20);
+        text("ArrayList Methods:",500,620);
+        textSize(18);
+        text("  -  int size(): returns an integer with the number of elements in the list.",500,660);
+        text("  -  boolean add(E obj): adds obj to the end of the list, returns true if sucessful, otherwise false.",500,690);
+        text("  -  void add(int index, E obj): adds obj at the specified position.",500,720);
+        text("  -  E get(int index): returns objects at specified index.",500,750);
+        text("  -  E set(int index, E obj): sets the element at index as obj, returns the previous value at index.",500,780);
+        text("  -  E remove(int index): removes the element at the specified index, returns removed element.",500,810);
+        textSize(20);
+        text("Traversing ArrayLists: ",500,850);
+        textSize(18);
+        text(" -  To iterate through an ArrayList, for loops or for-each loops can be used:",500,890);
+        textFont(monoFont);
+        text("      for(int i=0;i<list.size();i++) System.out.println(list.get(i));",500,920);
+        text("      for(int i : list) System.out.println(i);",500,960);
+        textFont(myFont);
+        textSize(20);
+        text("Example of Usage:",500,1000);
+        imageMode(CORNER);
+        image(arrL1,500,1040);
+        image(arrL2,500,1250);
     }else if(tutorialState==4){
         textAlign(LEFT,CENTER);
         textSize(25);
         text("Searching and Sorting",500,200);
+        textSize(20);
+        text("Searching Algorithms: algorithms to find an element in a sorted list of items",500,280);
+        textSize(18);
+        text("  -  Linear/Sequential Search: ",500,310);
+        text("       -  In linear/sequential search, the algorithm iterates through the list item-by-item until the element is found.",500,340);
+        imageMode(CORNER);
+        image(linearSearch,540,370);
+        text("  - Binary Search:",500,550);
+        text('       -  In binary search, the algorithm checks if the middle element is larger or smaller than the element,\n\t\t\t\thalves the array, and repeats with the appropriate subarray until found.',500,590);
+        image(binarySearch,540,640);
+        textSize(20);
+        text("Sorting Algorithms:",500,880);
+        textSize(18);
+        text("  -  Bubble Sort: ",500,910);
+        text("       -  In bubble sort, the algorithm repeatedly iterates through the array, and swaps any 2 neighbouring\n            elements if they are in the wrong order.",500,950);
+        image(bSort,540,990);
+        text("  -  Insertion Sort: ",500,1300);
+        text("       -  In insertion sort, the algorithm splits the list into a sorted and an unsorted part, and slowly\n            moves elements from the unsorted part to the sorted part.",500,1340);
+        image(iSort,540,1380);
+        text("  -  Merge Sort: ",500,1640);
+        text("       -  In merge sort, the array is recursively split into subarrays, then the subarrays are\n            recursively merged, in order, to form a sorted array.",500,1680);
+        image(mSort,540,1720);
     }else if(tutorialState==5){
-        textAlign(LEFT,CENTER);
+        textAlign(LEFT,CENTER); 
         textSize(25);
         text("Recursion",500,200);
     }
