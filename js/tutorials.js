@@ -265,6 +265,8 @@ function tutorialsDisplay(){
         text("public int binarySearch(int[] array, int target, int low, int high) {\n\tif(low>high) return -1;//base case\n\tint mid = (low + high)/2;\n\tif(array[mid]==target) return mid;//base case\n\telse if(target < array[mid])\n\t\treturn binarySearch(array, target, low, mid-1);//recursive call\n\telse return binarySearch(array,target,mid+1,high);//recursive call\n}",560,1050);
         textSize(18);
         textFont(myFont);
-        text("Recursive Merge Sort: ",500,1150);
+        text("  -  Recursive Merge Sort: ",500,1150);
+        imageMode(CORNER);
+        image(mSort,560,1200);
     }   
 } 

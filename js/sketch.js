@@ -160,25 +160,25 @@ function sideBar(){
     text("\tArrays",80,270);
 
     fill(100);
-    if(mouseDetect(80,400,290-y,340-y)){
+    if(mouseDetect(80,400,290-y,330-y)){
       fill('#75B8C8');
     }
     text("\tArrayLists",80,310);
 
     fill(100);
-    if(mouseDetect(80,400,340-y,380-y)){
+    if(mouseDetect(80,400,330-y,370-y)){
       fill('#75B8C8');
     }
     text("\tSearching and Sorting",80,350);
 
     fill(100);
-    if(mouseDetect(80,400,380-y,420-y)){
+    if(mouseDetect(80,400,370-y,410-y)){
       fill('#75B8C8');
     }
     text("\tRecursion",80,390);
 
     fill(100);
-    if(mouseDetect(80,400,420-y,460-y)){
+    if(mouseDetect(80,400,410-y,450-y)){
       fill('#75B8C8');
     }
     text("Showcase",80,430);
