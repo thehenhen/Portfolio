@@ -224,10 +224,47 @@ function tutorialsDisplay(){
         image(iSort,540,1380);
         text("  -  Merge Sort: ",500,1640);
         text("       -  In merge sort, the array is recursively split into subarrays, then the subarrays are\n            recursively merged, in order, to form a sorted array.",500,1680);
-        image(mSort,540,1720);
+        image(mSort,540,1720,357,459);
     }else if(tutorialState==5){
         textAlign(LEFT,CENTER); 
         textSize(25);
         text("Recursion",500,200);
-    }
+        textSize(20);
+        text("Basics:",500,280);
+        textSize(18);
+        rectMode(CORNER);
+        fill('#D3EDF3');
+        rect(560,450,500,90);
+        rect(560,690,550,110);
+        rect(560,985,590,140);
+        fill(100);
+        text("  -  Recursion is a method of solving a problem by dividing it into smaller and\n     smaller versions of itself.",500,320);
+        text("  -  Every recursive method has a base case and a recursive call:",500,360);
+        text("       -  The base case terminates the method once it reaches a certain point.",500,390);
+        text("       -  The recursive call calls the method, with slightly different parameters:",500,420);
+        textFont(monoFont);
+        text("public int factorial (int n) {\n\tif(n==1) return 1;//base case\n\treturn n*factorial(n-1);//recursive recall\n}",560,490);
+        textFont(myFont);
+        text("                    -  In this function, the function calls itself with the parameter\n                      decreased by 1, multiplies the return by the parameter, and returns it.",500,560);
+        text("                    -  Once the parameter reaches 1, the function will return 1.",500,600);
+        textSize(20);
+        text("Recursive Traversal: ",500,640);
+        textSize(18);
+        text("  -  Recursion can be used to traverse arrays: ",500,670);
+        textFont(monoFont);
+        text("public void traverseArray(int[] array, int index){\n\tif (index==array.length) return;//base case\n\tSystem.out.println(array[index]);\n\ttraverseArray(array,index+1);//recursive recall\n}",560,740);
+        textFont(myFont);
+        text("  -  In this function, the base case is when the index reaches the end of the array,\n      and it recursively calls itself with the index increased by 1.",500,830);
+        textSize(20);
+        text("Recursive Searching and Sorting: ",500,880);
+        textSize(18);
+        text("  -  Recursion can be used as a substitute to iterations in many situations,\n       including searching and sorting.",500,920);
+        text("  - Recursive Binary Search: ",500,960);
+        textFont(monoFont);
+        textSize(14);
+        text("public int binarySearch(int[] array, int target, int low, int high) {\n\tif(low>high) return -1;//base case\n\tint mid = (low + high)/2;\n\tif(array[mid]==target) return mid;//base case\n\telse if(target < array[mid])\n\t\treturn binarySearch(array, target, low, mid-1);//recursive call\n\telse return binarySearch(array,target,mid+1,high);//recursive call\n}",560,1050);
+        textSize(18);
+        textFont(myFont);
+        text("Recursive Merge Sort: ",500,1150);
+    }   
 } 
