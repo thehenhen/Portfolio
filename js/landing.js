@@ -20,6 +20,9 @@ function landingDisplay(){
     text("Welcome",width/2,200);
     textSize(20);
     text("This is Henry Zhang's final portfolio project for ICS4U. ",width/2,300);
+    textSize(15);
+    text("SPACE to start/stop, click and drag to draw/erase.",width/2,height-105)
+    textSize(20);
     fill(255);
     if(mouseDetect(width/2-100,width/2+100,400-40,400+40)){
         fill(200); 

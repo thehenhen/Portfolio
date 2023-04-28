@@ -47,25 +47,25 @@ let webState=-1;
 //2 showcase
 
 function preload(){
-  myFont = loadFont('assets/SpaceGrotesk-Regular.ttf');
-  monoFont = loadFont('assets/SpaceMono-Regular.ttf');
-  pfp=loadImage('assets/profilePicture.jpg');
-  person=loadImage('assets/person.png');
-  teacher=loadImage('assets/teacher.png');
-  mainOOP=loadImage('assets/mainOOP.png');
-  minimum=loadImage('assets/minimum.png');
-  reverse=loadImage('assets/reverse.png');
-  arrL1=loadImage('assets/arrayList1.png');
-  arrL2=loadImage('assets/arrayList2.png');
-  linearSearch=loadImage('assets/linearSearch.png');
-  binarySearch=loadImage('assets/binarySearch.png');
-  bSort=loadImage('assets/bubbleSort.png');
-  iSort=loadImage('assets/insertionSort.png');
-  mSort=loadImage('assets/mergeSort.png');
+  myFont = loadFont(".../assets/SpaceGrotesk-Regular.ttf");
+  monoFont = loadFont(".../assets/SpaceMono-Regular.ttf");
+  pfp=loadImage(".../assets/profilePicture.jpg");
+  person=loadImage(".../assets/person.png");
+  teacher=loadImage(".../assets/teacher.png");
+  mainOOP=loadImage(".../assets/mainOOP.png");
+  minimum=loadImage(".../assets/minimum.png");
+  reverse=loadImage(".../assets/reverse.png");
+  arrL1=loadImage(".../assets/arrayList1.png");
+  arrL2=loadImage(".../assets/arrayList2.png");
+  linearSearch=loadImage(".../assets/linearSearch.png");
+  binarySearch=loadImage(".../assets/binarySearch.png");
+  bSort=loadImage(".../assets/bubbleSort.png");
+  iSort=loadImage(".../assets/insertionSort.png");
+  mSort=loadImage(".../assets/mergeSort.png");
 }
 
 function setup() {
-  cnv = createCanvas(windowWidth, windowHeight);
+  cnv = createCanvas(windowWidth, windowHeight); 
   landingIntialize();
   scrollbarInitialize();
 }

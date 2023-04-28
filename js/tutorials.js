@@ -100,7 +100,7 @@ function tutorialsDisplay(){
         textSize(25);
         text("Arrays",500,200);
         textSize(20);
-        text("Basics",500,280);
+        text("Basics:",500,280);
         textSize(18);
 
         text("  -  The Array class is a class that stores primitive data types.",500,320);
