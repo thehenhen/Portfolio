@@ -45,6 +45,27 @@ function mouseClicked(){
         scrollbarInitialize();
       }
 
+      if(webState==2){
+        if(mouseDetect(500-(hs1.spos-hs1.sposMin),820-(hs1.spos-hs1.sposMin),200+(y-(vs1.spos-vs1.sposMin)*2.3),520+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://github.com/thehenhen/MC2D");
+        }
+        if(mouseDetect(850-(hs1.spos-hs1.sposMin),1170-(hs1.spos-hs1.sposMin),200+(y-(vs1.spos-vs1.sposMin)*2.3),520+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://thehenhen.github.io/Santa-s-Terror/");
+        }
+        if(mouseDetect(1200-(hs1.spos-hs1.sposMin),1520-(hs1.spos-hs1.sposMin),200+(y-(vs1.spos-vs1.sposMin)*2.3),520+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://github.com/thehenhen/FlowTime");
+        }
+        if(mouseDetect(500-(hs1.spos-hs1.sposMin),820-(hs1.spos-hs1.sposMin),550+(y-(vs1.spos-vs1.sposMin)*2.3),870+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://github.com/thehenhen/diep");
+        }
+        if(mouseDetect(850-(hs1.spos-hs1.sposMin),1170-(hs1.spos-hs1.sposMin),550+(y-(vs1.spos-vs1.sposMin)*2.3),870+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://github.com/thehenhen/PongInFourHours");
+        }
+        if(mouseDetect(1200-(hs1.spos-hs1.sposMin),1520-(hs1.spos-hs1.sposMin),550+(y-(vs1.spos-vs1.sposMin)*2.3),870+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://thehenhen.github.io/GameOfLife/");
+      }
+      }
+
 
     }else{
       if(mouseDetect(width/2-100,width/2+100,400-40,400+40)){

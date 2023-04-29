@@ -26,6 +26,12 @@ let binarySearch;
 let bSort;
 let iSort;
 let mSort;
+let mc2d;
+let santa;
+let flowtime;
+let diep;
+let pong;
+let conway;
 
 let hs1;
 let vs1;
@@ -69,6 +75,12 @@ function setup() {
   bSort=loadImage("assets/bubbleSort.png");
   iSort=loadImage("assets/insertionSort.png");
   mSort=loadImage("assets/mergeSort.png");
+  mc2d=loadImage("assets/mc2d.png");
+  santa=loadImage("assets/santa.png");
+  flowtime=loadImage("assets/flowtime.png");
+  diep=loadImage("assets/diep.png");
+  pong=loadImage("assets/pong.png");
+  conway=loadImage("assets/conway.png");
 }
 
 function draw() {
