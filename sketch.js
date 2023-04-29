@@ -53,13 +53,6 @@ let webState=-1;
 //2 showcase
 
 function preload(){
-  
-}
-
-function setup() {
-  cnv = createCanvas(windowWidth, windowHeight); 
-  landingIntialize();
-  scrollbarInitialize();
   myFont = loadFont("assets/SpaceGrotesk-Regular.ttf");
   monoFont = loadFont("assets/SpaceMono-Regular.ttf");
   pfp=loadImage("assets/profilePicture.jpg");
@@ -81,6 +74,12 @@ function setup() {
   diep=loadImage("assets/diep.png");
   pong=loadImage("assets/pong.png");
   conway=loadImage("assets/conway.png");
+}
+
+function setup() {
+  cnv = createCanvas(windowWidth, windowHeight); 
+  landingIntialize();
+  scrollbarInitialize();
 }
 
 function draw() {
