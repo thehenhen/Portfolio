@@ -87,7 +87,7 @@ function showcaseDisplay(){
     //Santa's Terror
     //MC2D
     //FlowTime
-    //ISP for ICS3U
     //diep
     //Pong
+    //Conway
 }
