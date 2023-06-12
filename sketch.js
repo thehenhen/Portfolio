@@ -32,6 +32,7 @@ let flowtime;
 let diep;
 let pong;
 let conway;
+let isp;
 
 let hs1;
 let vs1;
@@ -74,6 +75,7 @@ function preload(){
   diep=loadImage("assets/diep.png");
   pong=loadImage("assets/pong.png");
   conway=loadImage("assets/conway.png");
+  isp=loadImage("assets/isp.png");
 }
 
 function setup() {

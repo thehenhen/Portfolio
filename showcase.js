@@ -79,9 +79,17 @@ function showcaseDisplay(){
     text("The cellular automata simulation\non the landing page.",1220,815);
     image(conway,1220,570,280,200); 
 
-
-
-
+    fill(220);
+    if(mouseDetect(500-(hs1.spos-hs1.sposMin),820-(hs1.spos-hs1.sposMin),900+(y-(vs1.spos-vs1.sposMin)*2.3),1220+(y-(vs1.spos-vs1.sposMin)*2.3))){
+        fill(230);
+    }
+    rect(500,900,320,320,20);
+    fill(100);
+    textSize(22);
+    text("Pathfinder Adventure - ISP",520,1125);
+    textSize(16);
+    text("The final game project for\nthe ICS4U course.",520,1155);
+    image(isp,520,920,280,200); 
 
     textAlign(LEFT,CENTER);
     //Santa's Terror

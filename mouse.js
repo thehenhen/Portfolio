@@ -63,7 +63,10 @@ function mouseClicked(){
         }
         if(mouseDetect(1200-(hs1.spos-hs1.sposMin),1520-(hs1.spos-hs1.sposMin),550+(y-(vs1.spos-vs1.sposMin)*2.3),870+(y-(vs1.spos-vs1.sposMin)*2.3))){
           window.open("https://thehenhen.github.io/GameOfLife/");
-      }
+        }
+        if(mouseDetect(500-(hs1.spos-hs1.sposMin),820-(hs1.spos-hs1.sposMin),900+(y-(vs1.spos-vs1.sposMin)*2.3),1220+(y-(vs1.spos-vs1.sposMin)*2.3))){
+          window.open("https://github.com/thehenhen/PathfinderAdventure");
+        }
       }
 
 
