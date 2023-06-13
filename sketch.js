@@ -32,7 +32,8 @@ let flowtime;
 let diep;
 let pong;
 let conway;
-let isp;
+let isp1;
+let isp2;
 
 let hs1;
 let vs1;
@@ -52,6 +53,7 @@ let webState=-1;
 //0 home
 //1 tutorials
 //2 showcase
+//3 isp
 
 function preload(){
   myFont = loadFont("assets/SpaceGrotesk-Regular.ttf");
@@ -75,7 +77,8 @@ function preload(){
   diep=loadImage("assets/diep.png");
   pong=loadImage("assets/pong.png");
   conway=loadImage("assets/conway.png");
-  isp=loadImage("assets/isp.png");
+  isp1=loadImage("assets/isp1.png");
+  isp2=loadImage("assets/isp2.png");
 }
 
 function setup() {
@@ -106,7 +109,14 @@ function draw() {
     showcaseDisplay();
     pop();
     sideBar();
-  }else if(webState==-1){
+  }else if(webState==3){
+    frameRate(60);
+    yMin=0;
+    ispDisplay();
+    pop();
+    sideBar();
+  }
+  else if(webState==-1){
     frameRate(10);
     if(moving){
       landingUpdate();
@@ -160,6 +170,12 @@ function sideBar(){
       fill('#75B8C8');
     }
     text("Showcase",80,230);
+
+    fill(100);
+    if(mouseDetect(80,400,250-y,290-y)){
+      fill('#75B8C8');
+    }
+    text("ISP",80,270);
   }else{
     fill(100);
     if(mouseDetect(80,400,210-y,250-y)){
@@ -196,6 +212,12 @@ function sideBar(){
       fill('#75B8C8');
     }
     text("Showcase",80,430);
+
+    fill(100);
+    if(mouseDetect(80,400,450-y,490-y)){
+      fill('#75B8C8');
+    }
+    text("ISP",80,470);
   }
   
   hs1.update();

@@ -15,6 +15,12 @@ function mouseClicked(){
         y=0;
       }
 
+      if((mouseDetect(80,400,250-y,290-y)&&!tutorialsMenu)||(mouseDetect(80,400,460-y,500-y)&&tutorialsMenu)){
+        webState=3;
+        scrollbarInitialize();
+        y=0;
+      }
+
       if((mouseDetect(80,400,210-y,250-y)&&tutorialsMenu)){
         webState=1;
         tutorialState=1;
@@ -64,7 +70,10 @@ function mouseClicked(){
         if(mouseDetect(1200-(hs1.spos-hs1.sposMin),1520-(hs1.spos-hs1.sposMin),550+(y-(vs1.spos-vs1.sposMin)*2.3),870+(y-(vs1.spos-vs1.sposMin)*2.3))){
           window.open("https://thehenhen.github.io/GameOfLife/");
         }
-        if(mouseDetect(500-(hs1.spos-hs1.sposMin),820-(hs1.spos-hs1.sposMin),900+(y-(vs1.spos-vs1.sposMin)*2.3),1220+(y-(vs1.spos-vs1.sposMin)*2.3))){
+      }
+
+      if(webState==3){
+        if(mouseDetect(500-(hs1.spos-hs1.sposMin),815-(hs1.spos-hs1.sposMin),860+(y-(vs1.spos-vs1.sposMin)*2.3),880+(y-(vs1.spos-vs1.sposMin)*2.3))){
           window.open("https://github.com/thehenhen/PathfinderAdventure");
         }
       }
