@@ -5,7 +5,8 @@ function mouseClicked(){
         scrollbarInitialize();
       }
       if(mouseDetect(80,400,170-y,210-y)){
-        //webState=1;
+        webState=1;
+        tutorialState=0;
         y=0;
         tutorialsMenu=!tutorialsMenu;
       }

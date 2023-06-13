@@ -4,7 +4,16 @@ function tutorialsDisplay(){
     textSize(30);
     
     text("Tutorials",500,100);
-    if(tutorialState==1){
+    if(tutorialState==0){
+        textAlign(LEFT,CENTER);
+        textSize(25);
+        text("Bibliography",500,200);
+        textSize(20);
+        text("http://support.ebsco.com/LEX/AP-Computer-Science-A_Study-Guide.pdf",500,280);
+        text("https://library.fiveable.me/ap-comp-sci-a",500,320);
+        text("https://www.geeksforgeeks.org/sorting-algorithms/",500,360);
+    }
+    else if(tutorialState==1){
         textAlign(LEFT,CENTER);
         textSize(25);
         text("Object-Oriented Programming",500,200);
